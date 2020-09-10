@@ -1,1 +1,23 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.14
 
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run: 
+          name: Print the environment variables according to the context
+          command: |
+            ls
+            echo $TEST_ENV_VAR
+
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - build:
+          context: development
