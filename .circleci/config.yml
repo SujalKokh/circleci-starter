@@ -13,7 +13,7 @@ jobs:
           name: Print the environment variables according to the context
           command: |
             ls
-            echo $STAGING_TEST_VAR
+            echo $TEST_ENV_VAR
 
 workflows:
   version: 2
